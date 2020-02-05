@@ -42,38 +42,23 @@ public class Morpion {
         return str;
     }
 
-    public void coupJoueur1(int x, int y) { // methode pour vérifier et ettribuer une case pour le joueur 1
-        if ((x < 0 || x > 2) || (y < 0 || y > 2)) { // les indices doivent être entre 0 et 2
-            System.out.println("Veuillez choisir un entier entre 0 et 2"); // sinon j'en informe le joueur
-            str = ""; // réinitialisation de l'affichage de la grille
-            replay = true; // attribution au boolean pour que le joueur rejoue
-        } else if (grille[x][y] != VIDE) { // si la case a déjà été joué
-            System.out.println("Cette case est déjà jouée !");
-            str = "";// réinitialisation de l'affichage de la grille
-            replay = true;// attribution au boolean pour que le joueur rejoue
-        } else { // sinon si la case est disponible
-            grille[x][y] = ROND; // on attribue la valeur corrspondant au joueur 1
-            str = "";// réinitialisation de l'affichage de la grille
-            coup++; // on incremente le nombre de coups joués au total
-            replay = false; // on peut passer au joueur suivant
-        }
-    }
-
-    public void coupJoueur2(int x, int y) {
+    public void coupJoueur(int x, int y, int z) {
         if ((x < 0 || x > 2) || (y < 0 || y > 2)) {
             System.out.println("Veuillez choisir un entier entre 0 et 2");
-            str = "";
             replay = true;
         } else if (grille[x][y] != VIDE) {
             System.out.println("Cette case est déjà jouée !");
-            str = "";
             replay = true;
         } else {
-            grille[x][y] = CROIX;
-            str = "";
+            if (z == 1) {
+                grille[x][y] = ROND;
+            } else {
+                grille[x][y] = CROIX;
+            }
             coup++;
             replay = false;
         }
+        str = "";
     }
     
     public void winGame(int gamer){ // methode de verification de victoires

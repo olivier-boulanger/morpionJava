@@ -22,7 +22,7 @@ public class Main {
                     System.out.println("Quel colonne ?");
                     y = sc.nextInt();
                     sc.nextLine();
-                    morp.coupJoueur1(x, y); // on appelle la méthode coupJoueur avec les valeurs saisies pour attribuer le coup ou faire rejouer (voir la méthode)
+                    morp.coupJoueur(x, y, 1); // on appelle la méthode coupJoueur avec les valeurs saisies pour attribuer le coup ou faire rejouer (voir la méthode)
                 } while (morp.replay); // on boucle sur le premier joueur si la case choisie est déjà prise ou non comprise dans la grille de jeu
                 System.out.println(morp.affiche()); // on fait appelle à la méthode pour afficher la grille modifiée après le coup joué
                 morp.winGame(1); // on vérifie avec la méthode winGame si le joueur a gagné ou si la partie continue
@@ -40,7 +40,7 @@ public class Main {
                     System.out.println("Quel valeur pour y ?");
                     y = sc.nextInt();
                     sc.nextLine();
-                    morp.coupJoueur2(x, y);
+                    morp.coupJoueur(x, y, 2);
                 } while (morp.replay);
                 System.out.println(morp.affiche());
                 morp.winGame(2);
