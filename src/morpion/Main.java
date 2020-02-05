@@ -16,10 +16,10 @@ public class Main {
             do { // boucle tant que la partie n'est pas fini
                 do { // boucle pour le premier joueur
                     System.out.println("JOUEUR 1");
-                    System.out.println("Quel valeur pour x ?"); // on demande les valeurs de la case souhaitée
+                    System.out.println("Quel ligne ?"); // on demande les valeurs de la case souhaitée
                     x = sc.nextInt();
                     sc.nextLine();
-                    System.out.println("Quel valeur pour y ?");
+                    System.out.println("Quel colonne ?");
                     y = sc.nextInt();
                     sc.nextLine();
                     morp.coupJoueur1(x, y); // on appelle la méthode coupJoueur avec les valeurs saisies pour attribuer le coup ou faire rejouer (voir la méthode)
